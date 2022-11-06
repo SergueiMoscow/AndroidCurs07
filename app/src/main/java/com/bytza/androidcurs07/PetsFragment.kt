@@ -28,12 +28,8 @@ class PetsFragment(val mainSupportFragmentManager: FragmentManager) : Fragment()
         val adapter = PetViewPageAdapter(mainSupportFragmentManager, lifecycle, repository.getAll())
         viewPager.adapter = adapter
 
-        return bindingPets.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         bindingPets.btnNext.setOnClickListener() {
+            val currentId =bindingPets.txtId.text.toString()
             var nextId = bindingPets.txtId.text.toString().toInt() + 1
             if (nextId > repository.getCount()-1) nextId = 0
             bindingPets.frgViewPager2.setCurrentItem(nextId, true)
@@ -45,6 +41,13 @@ class PetsFragment(val mainSupportFragmentManager: FragmentManager) : Fragment()
             bindingPets.frgViewPager2.setCurrentItem(nextId, true)
             //bindingPets.txtId.text = nextId.toString()
         }
+
+
+        return bindingPets.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
     }
 }

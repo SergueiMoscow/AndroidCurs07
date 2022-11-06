@@ -29,6 +29,7 @@ class PetFragment(val pet: Pet) : Fragment() {
         binding.pet = pet
         //bindingPets.pet = pet
         //bindingPets.txtId.text = pet.id.toString()
+        val currentId = activity?.findViewById<TextView>(R.id.txtId)?.text
         activity?.findViewById<TextView>(R.id.txtId)?.text  = pet.id.toString()
         binding.imageView.setImageResource(pet.resImage)
     }

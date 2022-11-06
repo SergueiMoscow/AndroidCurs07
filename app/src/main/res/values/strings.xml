@@ -18,4 +18,6 @@
     <string name="birthYear">Год рождения</string>
     <string name="owner">Хозяин</string>
     <string name="name">Имя</string>
+    <string name="account_demo_name">Gomer Simpson</string>
+    <string name="exit">Выход</string>
 </resources>

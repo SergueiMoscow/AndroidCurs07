@@ -26,14 +26,22 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.login.setOnClickListener() {
+//          // Это тоже работает
+//        binding.login.setOnClickListener() {
+        view.findViewById<Button>(R.id.login).setOnClickListener() {
             if (binding.username.text.toString() == "demo"
                 && binding.password.text.toString() == "demo")
             {
-                activity?.supportFragmentManager
-                    ?.beginTransaction()
-                    ?.replace(R.id.frgHolder, AccountFragment())
-                    ?.commit()
+//                // Этот вариант тоже работает
+//                // Заменил во время лекции с примером
+//                activity?.supportFragmentManager
+//                    ?.beginTransaction()
+//                    ?.replace(R.id.frgHolder, AccountFragment())
+//                    ?.commit()
+                parentFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frgHolder, AccountFragment())
+                    .commit()
             }
         }
     }

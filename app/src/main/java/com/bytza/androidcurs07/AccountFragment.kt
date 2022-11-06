@@ -23,11 +23,16 @@ class AccountFragment : Fragment() {
         binding = FragmentAccountBinding.inflate(inflater)
         binding.btnExit.setOnClickListener()
         {
-                activity?.supportFragmentManager
-                    ?.beginTransaction()
-                    ?.replace(R.id.frgHolder, LoginFragment())
-                    ?.commit()
-       }
+//                activity?.supportFragmentManager
+//                    ?.beginTransaction()
+//                    ?.replace(R.id.frgHolder, LoginFragment())
+//                    ?.commit()
+            parentFragmentManager
+                .beginTransaction()
+                .replace(R.id.frgHolder, LoginFragment())
+                .commit()
+
+        }
         return binding.root
     }
 

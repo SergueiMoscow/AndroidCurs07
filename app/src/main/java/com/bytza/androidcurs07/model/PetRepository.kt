@@ -24,7 +24,7 @@ class PetRepository {
 
     init {
         for (i in 0..100)
-            list.add(Pet(i, names[Random.nextInt(0, names.size)], owners[Random.nextInt(0, owners.size)], 1910+ Random.nextInt(0,12), images[i % 8]) )
+            list.add(Pet(i, names[Random.nextInt(0, names.size)], owners[Random.nextInt(0, owners.size)], 2010+ Random.nextInt(0,12), images[i % 8]) )
     }
 
     public fun getAll() = list
